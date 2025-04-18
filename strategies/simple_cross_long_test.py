@@ -1,0 +1,57 @@
+import pandas as pd
+from pandas import DataFrame
+import pandas_ta as ta
+import numpy as np
+from typing import Dict, List, Optional
+from .base_strategy import BaseStrategy
+from src.utils.logger import logger
+
+class SimpleCrossLongTest(BaseStrategy):
+    """
+    Estratégia de cruzamento de médias móveis .
+    """
+    
+    def __init__(self, config=None):
+        super().__init__(config)
+        
+        # Parâmetros da estratégia
+        self.ema_fast = 2
+        self.ema_slow = 4
+        # self.leverage = 3
+        self.investment_percent = 10
+        
+        # Stop Loss e Take Profit em porcentagem do capital investido
+        self.stop_loss = 0.02  # 2% do valor de entrada
+        self.take_profit = 0.04  # 4% do valor de entrada
+
+    def populate_indicators(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
+        """Calcula os indicadores técnicos."""
+        dataframe['ema_fast'] = ta.ema(dataframe['close'], length=self.ema_fast)
+        dataframe['ema_slow'] = ta.ema(dataframe['close'], length=self.ema_slow)
+        return dataframe
+
+    def populate_entry_trend(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
+        """Define os sinais de entrada."""
+        # dataframe.loc[
+        #     (                
+        #         (dataframe["ema_fast"].shift(1) > dataframe["ema_slow"].shift(2))
+        #     ),
+        #     "enter_long",
+        # ] = 1
+        
+        dataframe['enter_long'] = 1
+        return dataframe
+
+    def populate_exit_trend(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
+        """Define os sinais de saída."""
+        # dataframe.loc[
+        #     (                
+        #         (dataframe["ema_fast"].shift(1) < dataframe["ema_slow"].shift(2))
+        #     ),
+        #     "exit_long",
+        # ] = 1
+        dataframe['exit_long'] = 0
+        
+        return dataframe
+
+    

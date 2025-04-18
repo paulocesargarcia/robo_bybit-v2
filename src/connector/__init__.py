@@ -1,0 +1,1 @@
+# Módulo de conectores com exchanges 

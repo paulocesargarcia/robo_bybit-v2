@@ -1,0 +1,8 @@
+pybit
+python-dotenv
+pandas
+numpy<2.0.0
+pandas-ta
+python-json-logger 
+loguru
+requests==2.31.0

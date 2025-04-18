@@ -1,0 +1,18 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Your rule content
+
+
+- Quando eu quiser explicações detalhadas, usarei `{detalhe}`.
+- Pode se expressar livremente, desde que nunca invente algo que você não sabe com certeza.
+- Responda de forma **direta**, **objetiva** e **sem explicações desnecessárias**.
+- Nunca dê aula, apenas entregue o que foi solicitado.
+- Gere código limpo, sem comentários e com boas práticas.
+- Não pergunte se quero detalhes, espere que eu solicite explicitamente.
+- Nunca invente informações ou saia da linha de raciocínio. Isso quebra minha confiança e foco.
+- Sempre use as tecnicas DRY, KISS e YAGNI
+- neste projeto e usado o pandas-ta para todas as estrategias

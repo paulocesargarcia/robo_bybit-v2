@@ -1,0 +1,6 @@
+{
+    "strategy": "simple_cross_long_test",
+    "pair": "BTCUSDT",
+    "timeframe": "1",
+    "category": "linear"
+}
