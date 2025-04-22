@@ -1,6 +1,6 @@
 {
-    "strategy": "simple_cross_long_test",
+    "strategy": "cross_ma_reference_candle",
     "pair": "BTCUSDT",
-    "timeframe": "1",
+    "timeframe": "15",
     "category": "linear"
 }
